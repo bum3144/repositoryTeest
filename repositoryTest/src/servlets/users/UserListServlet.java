@@ -32,7 +32,7 @@ public class UserListServlet extends HttpServlet {
 			
 			request.setAttribute("list", list);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/users/list.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/user/list.jsp");
 			
 			rd.forward(request, response);
 			

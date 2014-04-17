@@ -30,7 +30,7 @@ public class UserDetailServlet extends HttpServlet {
 			
 			request.setAttribute("user", user);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/users/detail.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/user/detail.jsp");
 			rd.forward(request, response);
 
 		} catch (Throwable e) {

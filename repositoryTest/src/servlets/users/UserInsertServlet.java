@@ -44,7 +44,7 @@ public class UserInsertServlet extends HttpServlet {
 
 			dao.insert(vo);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/users/insert.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/user/insert.jsp");
 			rd.forward(request, response);
 			
 		}catch (Throwable e){

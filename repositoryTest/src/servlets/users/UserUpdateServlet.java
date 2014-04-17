@@ -30,7 +30,7 @@ public class UserUpdateServlet extends HttpServlet {
 			
 			request.setAttribute("user", user);
 			
-			RequestDispatcher rd =request.getRequestDispatcher("/users/updateform.jsp");
+			RequestDispatcher rd =request.getRequestDispatcher("/user/updateform.jsp");
 			
 			rd.forward(request, response);
 			
