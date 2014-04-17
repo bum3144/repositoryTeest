@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import vo.SubjectVo;
 import dao.SubjectDao;
 
-/*과목명에 상세보기 링크 추가
+/* 과목명에 상세보기 링크 추가
  * 
  */
 
