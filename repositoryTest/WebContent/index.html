@@ -3,12 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <title>BIT</title>
-<link rel='stylesheet' type='text/css' href='css.css'>
+<!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+<!-- <script src="jq.js"></script> -->
+<!-- <link rel='stylesheet' type='text/css' href='css.css'> -->
+
+<link href="css/ui-lightness/jquery-ui-1.10.4.custom.css"
+	rel="stylesheet">
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.js"></script>
+
+
 </head>
 <body>
+
+	<script>
+
+		$(function() {
+			$("#accordion").accordion();
+		});
+	</script>
+
+
+	<div id="accordion">
+		<h3>과목관리</h3>
+		<div>
+			<a href='subject/list.bit?pageNo=1&pageSize=10'>과목관리 가기 >></a>
+
+		</div>
+
+		<h3>과정관리</h3>
+		<div>
+			<a href='course/list.bit?pageNo=1&pageSize=10'>과정관리 가기 >></a>
+
+		</div>
+
+		<h3>회원관리</h3>
+		<div>
+			<a href='user/list.bit?pageNo=1&pageSize=10'>회원관리 가기 >></a>
+
+		</div>
+	</div>
+
+
+	<!-- 
 	<table>
 		<tr>
 			<td>
+			<input type="button" value="과목관리" onClick="subject/list.bit?pageNo=1&pageSize=10">
 				<a href='subject/list.bit?pageNo=1&pageSize=10'>과목관리</a>
 			</td>
 		</tr>
@@ -22,6 +63,6 @@
 				<a href='user/list.bit?pageNo=1&pageSize=10'>회원관리</a>
 			</td>
 		</tr>
-	</table>
+	</table> -->
 </body>
 </html>
