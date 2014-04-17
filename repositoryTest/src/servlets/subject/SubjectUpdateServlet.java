@@ -3,6 +3,7 @@ package servlets.subject;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,67 +21,30 @@ public class SubjectUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println("<html><head>"
-				+ "<link rel='stylesheet' type='text/css' href='/web01/css.css'>"
-				+ "<title>과목변경</title></head><body>");
 		try{
 		//1) DB에서 과목 상세 정보를 가져온다.
 		int no = Integer.parseInt(request.getParameter("no"));
 		SubjectDao dao = (SubjectDao)this.getServletContext().getAttribute("subjectDao");
-		SubjectVo vo = dao.detail(no);
+		SubjectVo subject = dao.detail(no);
 		
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<meta charset='UTF-8'>");
-		out.println("<title>과목변경폼</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("<h1>과목변경</h1>");
-		out.println("<form action='update.bit' method='post'>");
-		out.println("<table>");
-		out.println("<tr>");
-		out.println("<th>번호</th><td style='text-align:left;'><input type='text' name='no' value='" + vo.getNo() + "' readonly></td>");
-		out.println("</tr>");
-		out.println("<tr>");
-		out.println("<th>과목명</th><td style='text-align:left;'><input type='text' name='title' value='" + vo.getTitle() + "'></td>");
-		out.println("</tr>");
-		out.println("<tr>");
-		out.println("<th>설명</th><td style='text-align:left;'><textarea name='description' rows='10' cols='60'>" + vo.getDescription() + "</textarea></td>");
-		out.println("</tr>");
-		out.println("<tr><td colspan='2'>");
-		out.println("<input type='submit' value='변경'>");
-		out.println("<input type='button' value='취소' onclick=\"location.href='detail.bit?no=" + vo.getNo() + "'\">");
-		out.println("</td></tr>");
-		out.println("</table>");
-		out.println("</form>");
-		out.println("</body>");
-		out.println("</html>");
+		request.setAttribute("subject", subject);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/subject/updateform.jsp");
+		rd.forward(request, response);
 		
 		}catch (Throwable e){
-			out.println("오류 발생!!");
 			e.printStackTrace();
 		}
-		out.println("</body></html>");
 	}
 	
 	@Override
 	protected void doPost(
 			HttpServletRequest request, HttpServletResponse response)
 					throws ServletException, IOException {
-		// CharacterEncodingFilter로 대체함.
-		//request.setCharacterEncoding("UTF-8");
 
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>과목변경</title></head><body>");
 		try {
-			out.println("<h1>과목 변경 결과</h1>");
 
 			SubjectDao dao = (SubjectDao)this.getServletContext().getAttribute("subjectDao");
-
 			
 			SubjectVo vo = new SubjectVo();
 			vo.setNo(Integer.parseInt(request.getParameter("no")));
@@ -89,12 +53,9 @@ public class SubjectUpdateServlet extends HttpServlet {
 
 			dao.update(vo);
 			
-			out.println("변공성공!!");
 			response.sendRedirect("detail.bit?no=" + vo.getNo());
 		}catch (Throwable e){
-			out.println("오류 발생!!");
 			e.printStackTrace();
 		}
-		out.println("</body></html>");
 	}
 }
