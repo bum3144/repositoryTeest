@@ -17,6 +17,7 @@
 
 
 <body>
+<div>
 <h1>사용자 목록 test</h1>
 <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <a href='/repositoryTest/'>HOME</a> 
@@ -36,4 +37,5 @@
 </tr>
 <%}%>
 </table>
+</div>
 </body></html>

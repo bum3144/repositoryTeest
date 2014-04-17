@@ -16,6 +16,8 @@
 <body>
 <h1>사용자변경</h1>
 <form action='update.bit' method='post'>
+
+<div>
 <table>
 
 <tr>
@@ -59,6 +61,7 @@
 <input type='button' value='취소' onclick="location.href='detail.bit?no=<%=user.getNo()%>'">
 </td></tr>
 </table>
+</div>
 </form>
 </body>
 </html>

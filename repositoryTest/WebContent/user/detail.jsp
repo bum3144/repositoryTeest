@@ -16,6 +16,8 @@
 </head>
 
 <body>
+
+<div>
 <h1>사용자 상세정보</h1>
 <table border='1'>
 
@@ -54,7 +56,9 @@
 	<td style='text-align:left;'><%=user.getPostno()%></td>
 </tr>
 </table>
+
 <a href='list.bit?pageNo=1&pageSize=10'>목록</a>
 <a href='delete.bit?no=<%=user.getNo()%>'>삭제</a>
 <a href='update.bit?no=<%=user.getNo()%>'>변경</a><br>
+</div>
 </body></html>
