@@ -1,16 +1,14 @@
-package servlets.users;
+package users;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import vo.UserVo;
-import dao.UserDao;
 
 @WebServlet("/user/insert.bit")
 @SuppressWarnings("serial")
@@ -27,13 +25,7 @@ public class UserInsertServlet extends HttpServlet {
 			HttpServletRequest request, HttpServletResponse response)
 					throws ServletException, IOException {
 
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println("<html><head>"
-				+ "<link rel='stylesheet' type='text/css' href='/repositoryTest/css.css'>"
-				+ "<title>사용자등록</title></head><body>");
 		try {
-			out.println("<h1>사용자 등록 결과</h1>");
 
 			UserDao dao = (UserDao)this.getServletContext().getAttribute("userDao");
 
@@ -50,13 +42,11 @@ public class UserInsertServlet extends HttpServlet {
 
 			dao.insert(vo);
 			
-			out.println("등록성공!!");
-			response.setHeader("Refresh", "1;url=list.bit?pageNo=1&pageSize=10");
+			RequestDispatcher rd = request.getRequestDispatcher("/users/insert.jsp");
+			rd.forward(request, response);
+			
 		}catch (Throwable e){
-			out.println(e);
-			out.println("오류 발생!!");
 			e.printStackTrace();
 		}
-		out.println("</body></html>");
 	}
 }
