@@ -1,4 +1,5 @@
-<%@page import="users.UserVo"%>
+
+<%@page import="vo.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -9,7 +10,7 @@
 <html>
 <head>
 <meta charset='UTF-8'>
-<link rel='stylesheet' type='text/css' href='/web01/css.css'>
+<link rel='stylesheet' type='text/css' href='../css.css'>
 <title>사용자변경폼</title>
 </head>
 <body>

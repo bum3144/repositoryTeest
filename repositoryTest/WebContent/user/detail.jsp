@@ -1,4 +1,5 @@
-<%@page import="users.UserVo"%>
+
+<%@page import="vo.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='/web01/css.css'>
+<link rel='stylesheet' type='text/css' href='../css.css'>
 <title>사용자상세정보</title>
 <meta charset="UTF-8">
 </head>
