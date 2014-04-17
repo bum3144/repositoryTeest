@@ -15,7 +15,10 @@ List<SubjectVo> list = (List<SubjectVo>) request.getAttribute("list");
 </head>
 <body>
 <h1>과목 목록(byJSP)</h1>
-<a href='../index.html'>[홈]</a> <a href='form.html'>[새과목]</a><br>
+<input type="button" value="목록" onclick="location.href='../index.html'">
+<input type="button" value="새과목" onclick="location.href='form.html'">
+	
+<br>
 <table border='1'>
 
 <tr>

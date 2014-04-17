@@ -24,7 +24,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 		<tr>
 		<tr>
 			<th>내용</th>
-			<td><textarea rows=5 cols=60 readonly onFocus='this.blur()'><%=subject.getDescription()%></textarea></td>
+			<td><textarea rows=5 cols=60 readonly onFocus='this.blur()'><%=subject.getDescription()%></textarea> </td>
 		<tr>
 	</table>
 	<br>

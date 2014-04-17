@@ -9,6 +9,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 <head>
 <meta charset="UTF-8">
 <title>과목 변경폼</title>
+<link rel='stylesheet' type='text/css' href='../css.css'>
 </head>
 <body>
 	<h1>과목 변경폼</h1>
@@ -26,8 +27,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 			</tr>
 			<tr>
 				<th>설명</th>
-				<td style='text-align: left;'><input type='text' name='description'
-					value='<%=subject.getDescription()%>'></td>
+				<td style='text-align: left;'><textarea name="description" rows="10" cols="60"><%=subject.getDescription()%></textarea></td>
 			</tr>
 			<tr>
 				<td colspan='2'><input type='submit' value='변경'> <input
