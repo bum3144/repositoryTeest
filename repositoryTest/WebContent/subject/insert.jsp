@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Refresh" content="1; url=list.bit?pageNo=1&pageSize=10">
-<link rel='stylesheet' type='text/css' href='../subject/css.css'>
 <title>과목 등록(byJSP)</title>
 </head>
 <body>
