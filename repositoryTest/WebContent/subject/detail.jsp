@@ -12,6 +12,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 <title>과목 상세 정보(by JSP)</title>
 </head>
 <body>
+<div>
 	<h1>과목 상세 정보(by JSP)</h1>
 	<table border='1'>
 		<tr>
@@ -27,6 +28,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 			<td><textarea rows=5 cols=60 readonly onFocus='this.blur()'><%=subject.getDescription()%></textarea> </td>
 		<tr>
 	</table>
+	</div>
 	<br>
 			<input type="button" value="목록" onclick="location.href='list.bit?pageNo=1&pageSize=10'">
 			<input type="button" value="삭제" onclick="location.href='delete.bit?no=<%=subject.getNo()%>'">

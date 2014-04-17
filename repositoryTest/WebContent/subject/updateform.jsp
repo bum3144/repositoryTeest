@@ -12,6 +12,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 <link rel='stylesheet' type='text/css' href='../css.css'>
 </head>
 <body>
+<div>
 	<h1>과목 변경폼</h1>
 	<form action='update.bit' method='post'>
 		<table>
@@ -35,6 +36,7 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 				</td>
 			</tr>
 		</table>
+		</div>
 	</form>
 </body>
 </html>
