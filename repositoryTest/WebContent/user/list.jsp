@@ -20,7 +20,7 @@
 <h1>사용자 목록 test</h1>
 <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <a href='/repositoryTest/'>HOME</a> 
-<a href='/web01/users/form.html'>사용자추가</a><br>
+<a href='form.html'>사용자추가</a><br>
 <table>
 <tr>
 	<th>번호</th>
