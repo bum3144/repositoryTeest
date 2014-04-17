@@ -1,10 +1,55 @@
 @CHARSET "UTF-8";
 
-table { width: 500px;border-collapse: collapse;text-align: center;font-family: 'Trebuchet MS';}
-td, th { font-size: 10pt; border: 1px solid #98bf21; height: 30px;}
-th { background-color:#A7C942; color:#ffffff; font-family: Georgia;}
-tr.alt td { color:#000000; background-color:#EAF2D3;}
-a:link {text-decoration: none; color: #333333;}
-a:visited {text-decoration: none; color: #333333;}
-a:active {text-decoration: none; color: #333333;}
-a:hover {text-decoration: underline; color: red;}
+div{
+	width:700px;
+	margin:auto; 
+}
+
+table {
+	width: 600px;
+	border-collapse: collapse;
+	text-align: center;
+	font-family: 'Trebuchet MS';
+	margin: auto;
+}
+
+h1{
+	text-align: center;	
+}
+
+td, th {
+	font-size: 10pt; 
+	border: 1px solid #98bf21; 
+	height: 30px;
+}
+
+th {
+	background-color:#A7C942; 
+	color:#ffffff; 
+	font-family: Georgia;
+}
+
+tr.alt td {
+	color:#000000; 
+	background-color:#EAF2D3;
+}
+
+a:link {
+	text-decoration: none; 
+	color: #333333;
+}
+
+a:visited {
+	text-decoration: none; 
+	color: #333333;
+}
+
+a:active {
+	text-decoration: none; 
+	color: #333333;
+}
+
+a:hover {
+	text-decoration: underline; 
+	color: red;
+}
