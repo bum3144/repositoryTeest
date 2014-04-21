@@ -1,17 +1,9 @@
 <%@page import="vo.SubjectVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-SubjectVo subject = (SubjectVo) request.getAttribute("subject");
-%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>과목 변경폼</title>
-<link rel='stylesheet' type='text/css' href='../css.css'>
-</head>
-<body>
+
+<jsp:include page="/header.jsp"/>
+
 <div>
 	<h1>과목 변경폼</h1>
 	<form action='update.bit' method='post'>
@@ -19,24 +11,24 @@ SubjectVo subject = (SubjectVo) request.getAttribute("subject");
 			<tr>
 				<th>번호</th>
 				<td style='text-align: left;'><input type='text' name='no'
-					value='<%=subject.getNo()%>' readonly></td>
+					value='${subject.no}' readonly></td>
 			</tr>
 			<tr>
 				<th>과목명</th>
 				<td style='text-align: left;'><input type='text' name='title'
-					value='<%=subject.getTitle()%>'></td>
+					value='${subject.title}'></td>
 			</tr>
 			<tr>
 				<th>설명</th>
-				<td style='text-align: left;'><textarea name="description" rows="10" cols="60"><%=subject.getDescription()%></textarea></td>
+				<td style='text-align: left;'><textarea name="description" rows="10" cols="60">${subject.description}</textarea></td>
 			</tr>
 			<tr>
 				<td colspan='2'><input type='submit' value='변경'> <input
-					type='button' value='취소' onclick="location.href='detail.bit?no=<%=subject.getNo()%>'">
+					type='button' value='취소' onclick="location.href='detail.bit?no=${subject.no}'">
 				</td>
 			</tr>
 		</table>
 		</div>
 	</form>
-</body>
-</html>
+
+<jsp:include page="/footer.jsp"/>
