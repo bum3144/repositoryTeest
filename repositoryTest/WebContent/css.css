@@ -1,5 +1,23 @@
 @CHARSET "UTF-8";
 
+
+table { width: 500px;border-collapse: collapse;text-align: center;font-family: 'Trebuchet MS';}
+td, th { font-size: 10pt; border: 1px solid #98bf21; height: 30px;}
+th { background-color:#A7C942; color:#ffffff; font-family: Georgia;}
+tr.alt td { color:#000000; background-color:#EAF2D3;}
+
+h1
+{
+font-family: "Courier New", Courier, mono;
+font-size: 16px;
+font-weight: bold;
+color: #A7C942;
+}
+
+a:link {text-decoration: none; color: #333333;}
+a:visited {text-decoration: none; color: #333333;}
+a:active {text-decoration: none; color: #333333;}
+a:hover {text-decoration: underline; color: red;}
 div{
 	width:700px;
 	margin:auto; 
@@ -52,4 +70,4 @@ a:active {
 a:hover {
 	text-decoration: underline; 
 	color: red;
-}
+}>>>>>>> .r23
