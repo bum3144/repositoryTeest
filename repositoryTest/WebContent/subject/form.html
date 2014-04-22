@@ -2,31 +2,71 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<!-- jQuery UI -->
+<link rel="stylesheet"
+	href="../css/ui-lightness/jquery-ui-1.10.4.custom.css">
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/jquery-ui-1.10.4.custom.js"></script>
+
+
 <link rel='stylesheet' type='text/css' href='../css.css'>
-<title>과목입력폼</title>
+<script>
+	$(function() {
+		$("input[type=button]").button().click(function(event) {
+			event.preventDefault();
+		});
+		$("input[type=submit]").button().click(function(event) {
+			event.preventDefault();
+		});
+		$("input[type=reset]").button().click(function(event) {
+			event.preventDefault();
+		});
+	});
+</script>
+
+
+<script>
+	function send() {
+		var f = document.fn;
+		if (f.title.value == 0) {
+			alert("과목명은 입력해야 합니다.");
+			f.title.focus();
+			return false;
+		}
+		if (f.description.value == 0) {
+			alert("내용을 입력해야 합니다.");
+			f.description.focus();
+			return false;
+		}
+		f.submit();
+	}
+</script>
+
+<title>과목입력</title>
 </head>
 <body>
-<h1>과목입력</h1>
-<form action="insert.bit" method="post">
-<div>
-<table>
-	<tr>
-		<th>과목명</th>
-		<td style='text-align:left;'><input type="text" name="title"></td>
-	</tr>
-	<tr>
-		<th>설명</th>
-		<td style='text-align:left;'><textarea name="description" rows="10" cols="60"></textarea></td>
-	</tr>
-	<tr>
-		<td colspan='2'>
-			<input type="submit" value="등록">
-			<input type="reset" value="취소">
-			<input type="button" value="목록" onclick="history.back();">
-		</td>
-	</tr>
-</table>
-</div>
-</form>
+
+	<h1>과목입력</h1>
+	<form action="insert.bit" name="fn" method="post"
+		onsubmit="return send()">
+		<table>
+			<tr>
+				<th>과목명</th>
+				<td style='text-align: left;'><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<th>설명</th>
+				<td style='text-align: left;'><textarea name="description"
+						rows="10" cols="60"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan='2'><input type="submit" value="등록"> <input
+					type="reset" value="취소"> <input type="button" value="뒤로"
+					onclick="history.back();"></td>
+			</tr>
+		</table>
+	</form>
+
 </body>
 </html>
