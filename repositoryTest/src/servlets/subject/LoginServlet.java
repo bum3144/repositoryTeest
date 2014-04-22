@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vo.SubjectVo;
-import dao.SubjectDao;
-
 @WebServlet("/auth/login2.bit")
 @SuppressWarnings("serial")
 public class LoginServlet extends HttpServlet {
