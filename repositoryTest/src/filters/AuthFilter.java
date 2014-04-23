@@ -14,10 +14,7 @@ import javax.servlet.http.HttpSession;
 public class AuthFilter implements Filter {
 
 	@Override
-  public void destroy() {
-	  // TODO Auto-generated method stub
-	  
-  }
+  public void destroy() { }
 
 	@Override
   public void doFilter(ServletRequest request, javax.servlet.ServletResponse response,
