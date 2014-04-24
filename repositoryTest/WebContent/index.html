@@ -8,40 +8,42 @@
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/jquery-ui-1.10.4.custom.js"></script>
 
-
-
 <link rel='stylesheet' type='text/css' href='../css.css'>
 </head>
 <body>
- 
-	<script>
 
+	<script>
 		$(function() {
 			$("#accordion").accordion();
 		});
 	</script>
 
-
 	<div id="accordion">
+		<h3>로그인</h3>
+		<div>
+			<a href='auth/login.bit'>로그인 가기 ▶▶</a>
+		</div>
+		
 		<h3>과목관리</h3>
 		<div>
 			<a href='subject/list.bit?pageNo=1&pageSize=10'>과목관리 가기 ▶▶</a>
-
 		</div>
 
 		<h3>과정관리</h3>
 		<div>
 			<a href='course/list.bit?pageNo=1&pageSize=10'>과정관리 가기 ▶▶</a>
-
 		</div>
 
 		<h3>회원관리</h3>
 		<div>
 			<a href='user/list.bit?pageNo=1&pageSize=10'>회원관리 가기 ▶▶</a>
+		</div>
 
+		<h3>파일업로드</h3>
+		<div>
+			<a href='file/test01.html'>파일업로드 가기 ▶▶</a>
 		</div>
 	</div>
-
 
 </body>
 </html>
