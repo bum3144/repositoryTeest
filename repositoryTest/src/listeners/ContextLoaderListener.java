@@ -5,6 +5,14 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import util.DBConnectionPool;
+import controls.FileUploadControl;
+import controls.SubjectDeleteControl;
+import controls.SubjectDetailControl;
+import controls.SubjectInsertControl;
+import controls.SubjectListControl;
+import controls.SubjectUpdateControl;
+import controls.auth.LoginControl;
+import controls.auth.LogoutControl;
 import dao.MysqlCourseDao;
 import dao.MysqlLoginDao;
 import dao.MysqlSubjectDao;
@@ -51,6 +59,41 @@ public class ContextLoaderListener implements ServletContextListener {
 		MysqlLoginDao logindao = new MysqlLoginDao();
 		logindao.setDBConnectionPool(dbConnectionPool);
 		sc.setAttribute("loginDao", logindao);
+
+		SubjectListControl subjectListControl = new SubjectListControl();
+		subjectListControl.setSubjectDao(subjectdao);
+		sc.setAttribute("/subject/list.bit", subjectListControl);
+		
+		SubjectDetailControl subjectDetailControl = 
+				new SubjectDetailControl();
+		subjectDetailControl.setSubjectDao(subjectdao);
+		sc.setAttribute("/subject/detail.bit", subjectDetailControl);
+		
+		SubjectInsertControl subjectInsertControl = 
+				new SubjectInsertControl();
+		subjectInsertControl.setSubjectDao(subjectdao);
+		sc.setAttribute("/subject/insert.bit", subjectInsertControl);
+
+		SubjectUpdateControl subjectUpdateControl = 
+				new SubjectUpdateControl();
+		subjectUpdateControl.setSubjectDao(subjectdao);
+		sc.setAttribute("/subject/update.bit", subjectUpdateControl);
+		
+		SubjectDeleteControl subjectDeleteControl = 
+				new SubjectDeleteControl();
+		subjectDeleteControl.setSubjectDao(subjectdao);
+		sc.setAttribute("/subject/delete.bit", subjectDeleteControl);
+		
+		LoginControl loginControl = new LoginControl();
+		loginControl.setLoginDao(logindao);
+		sc.setAttribute("/auth/login.bit", loginControl);
+		
+		LogoutControl logoutControl = new LogoutControl();
+		sc.setAttribute("/auth/logout.bit", logoutControl);
+		
+		FileUploadControl fileUploadControl = new FileUploadControl();
+		sc.setAttribute("/file/upload.bit", fileUploadControl);
+		
 	}
 
 }
