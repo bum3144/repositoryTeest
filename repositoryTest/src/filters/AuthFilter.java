@@ -25,6 +25,8 @@ public class AuthFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
  		
+
+		
 		// 1) 클라이언트가 요청한 URL 정보를 가져온다
 		String servletPath = httpRequest.getServletPath();
 		
@@ -32,7 +34,7 @@ public class AuthFilter implements Filter {
 		// 로그인 여부 검사한다.
  		if (!servletPath.startsWith("/auth/")){
  			HttpSession session = httpRequest.getSession();
- 			if(session.getAttribute("loginUser") == null){
+ 			if(session.getAttribute("loginUser") == ""){
  				String contextRoot = httpRequest.getContextPath();	// "/web01"
  				httpResponse.sendRedirect(contextRoot + "/auth/login.bit");
  				// "/web01/auth/login.bit"
